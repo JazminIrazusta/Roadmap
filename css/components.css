@@ -84,13 +84,14 @@ textarea::placeholder {
 }
 
 .card__title {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.01rem;
 }
 
 .card__text {
-  margin-bottom: 1rem;
+  margin-bottom: 0.1rem;
+  font-size: 0.9rem;
 }
 
 .card__arrow {
@@ -98,13 +99,13 @@ textarea::placeholder {
 }
 
 .spacer {
-  flex: 1;
+  flex: 0.1;
 }
 
 .tag {
   background: var(--accent);
   color: var(--bg-main);
-  padding: 0.2rem 0.5rem;
+  padding: 0.1rem 0.5rem;
   border-radius: 4px;
   font-size: 0.8rem;
   font-weight: 600;
@@ -121,6 +122,7 @@ textarea::placeholder {
 .summary {
   cursor: pointer;
   font-weight: 600;
+  font-size: 0.9rem;
 }
 
 .card__actions {
@@ -161,13 +163,14 @@ details summary:hover {
 details p {
   padding: 1rem;
   margin: 0;
+  font-size: 0.8rem;
 }
 
 /* ===============================
    COMPLETION SECTION
 ================================ */
 .completion {
-  margin-top: 2rem;
+  margin-top: 1rem;
   padding: 1rem;
   background: var(--bg-card);
   border: 1px solid var(--border);
