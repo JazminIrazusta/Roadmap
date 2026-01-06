@@ -25,34 +25,23 @@
     <p>Vocabulario esencial para el análisis de datos.</p>
   </section>
 
-    <section class="content">
-      <details>
-        <summary>Términos de Bases de Datos</summary>
-        <p>Query, Table, Column, Row, Primary Key, Foreign Key.</p>
-      </details>
-
-      <details>
-        <summary>Estadística</summary>
-        <p>Mean, Median, Mode, Standard Deviation, Correlation.</p>
-      </details>
-
-      <details>
-        <summary>Machine Learning</summary>
-        <p>Algorithm, Model, Training, Prediction, Accuracy.</p>
-      </details>
-
-    <div class="annotation-form-container">
-      <h3>Agregar Anotación</h3>
-      <form id="annotation-form" class="annotation-form">
-        <input type="text" id="annotation-title" placeholder="Título de la anotación" required />
-        <textarea id="annotation-content" placeholder="Contenido de la anotación" required></textarea>
-        <button type="submit" class="btn">Agregar Anotación</button>
+  <section class="content-layout">
+    <div class="cards-section">
+      <div id="cardsContainer"></div>
+    </div>
+    <div class="form-section">
+      <form id="cardForm" class="card" style="cursor: default;">
+        <div class="card__top">
+          <span class="tag tag--english">Inglés</span>
+        </div>
+        <h2 class="card__title">Nueva tarjeta</h2>
+        <input type="text" id="title" placeholder="Título (ej: Database Terms)" required style="margin-bottom: .5rem;" />
+        <textarea id="description" placeholder="Descripción" required rows="2" style="margin-bottom: .5rem;" ></textarea>
+        <textarea id="content" placeholder="Ejemplo (ejemplos, tips)" required rows="5" ></textarea>
+        <button class="btn btn--primary" style="margin-top: .75rem;"> Crear tarjeta </button>
       </form>
     </div>
-
-    <div class="annotations-container">
-      <!-- Anotaciones dinámicas aquí -->
-    </div>
+  </section>
 
 </main>
 
@@ -61,26 +50,10 @@
 </footer>
 
 <script src="../js/storage.js"></script>
-<script src="../js/annotations.js"></script>
+<script src="../js/script-english.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const nodeId = window.location.pathname.split('/').pop().split('.')[0]; // Extrae 'english' de la URL, pero en realidad es 'ingles'?
-
-  // Para english.html, pathname es english.html, pero id es 'ingles'
-  // Necesito mapear
-  const idMap = {
-    'english': 'ingles',
-    'estadistica': 'estadistica',
-    'excel': 'excel',
-    'git': 'git',
-    'ia': 'ia',
-    'powerbi': 'powerbi',
-    'python': 'python',
-    'sql': 'sql',
-    'tableau': 'tableau',
-    'aws': 'aws'
-  };
-  const nodeId = idMap[window.location.pathname.split('/').pop().split('.')[0]] || window.location.pathname.split('/').pop().split('.')[0];
+  const nodeId = 'ingles'; // ID del nodo
 
   // Inicializar progreso
   const checkbox = document.getElementById('complete-' + nodeId);
@@ -92,10 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
   checkbox.addEventListener('change', () => {
     setProgress(nodeId, checkbox.checked ? 'done' : 'todo');
   });
-
-  // Inicializar anotaciones
-  renderAnnotations(nodeId);
-  initAnnotationForm(nodeId);
 });
 </script>
 </body>
