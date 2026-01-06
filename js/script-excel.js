@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <summary class="card__title">${card.title}</summary>
       <p class="card__text">${card.description}</p>
       <details class="details">
-        <summary class="summary">Contenido completo</summary>
+        <summary class="summary">Ejemplo</summary>
         <div class="details__body">
           <p>${card.content.replace(/\n/g, "<br>")}</p>
         </div>
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const card = cards[cardIndex];
     const newTitle = prompt("Editar título:", card.title);
     const newDesc = prompt("Editar descripción:", card.description);
-    const newContent = prompt("Editar contenido:", card.content);
+    const newContent = prompt("Editar ejemplo:", card.content);
 
     if (newTitle !== null && newDesc !== null && newContent !== null) {
       cards[cardIndex] = { ...card, title: newTitle, description: newDesc, content: newContent };
