@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AWS/Azure · Roadmap Analista de Datos</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="brand">Roadmap · Analista de Datos</div>
+  <nav>
+    <a href="../index.html">Inicio</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section class="page-title">
+    <h1>AWS/Azure</h1>
+    <p>Computación en la nube para análisis de datos a escala.</p>
+  </section>
+
+  <section class="content">
+    <details>
+      <summary>Conceptos de Cloud Computing</summary>
+      <p>IaaS, PaaS, SaaS y sus aplicaciones en datos.</p>
+    </details>
+
+    <details>
+      <summary>Almacenamiento de Datos</summary>
+      <p>S3 en AWS, Blob Storage en Azure para big data.</p>
+    </details>
+
+    <details>
+      <summary>Procesamiento de Datos</summary>
+      <p>Lambda, Glue en AWS; Functions, Data Factory en Azure.</p>
+    </details>
+
+    <details>
+      <summary>Seguridad en la Nube</summary>
+      <p>Mejores prácticas para proteger datos en la nube.</p>
+    </details>
+  </section>
+
+  <section class="completion">
+    <label>
+      <input type="checkbox" id="complete-cloud" /> Marcar como completado
+    </label>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>Constancia &gt; motivación</p>
+</footer>
+
+<script src="../js/storage.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const checkbox = document.getElementById('complete-cloud');
+  const progress = getProgress();
+  if (progress['cloud'] === 'done') {
+    checkbox.checked = true;
+  }
+
+  checkbox.addEventListener('change', () => {
+    setProgress('cloud', checkbox.checked ? 'done' : 'todo');
+  });
+});
+</script>
+</body>
+</html>

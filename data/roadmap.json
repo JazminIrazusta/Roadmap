@@ -1,0 +1,96 @@
+[
+  {
+    "id": "starting",
+    "title": "Start🏃‍♂️‍➡️",
+    "x": 100,
+    "y": 100,
+    "connections": ["sql"]
+  },
+  {
+    "id": "sql",
+    "title": "📊SQL",
+    "page": "pages/sql.html",
+    "x": 300,
+    "y": 100,
+    "connections": ["excel"]
+  },
+  {
+    "id": "excel",
+    "title": "📊Excel",
+    "page": "pages/excel.html",
+    "x": 500,
+    "y": 100,
+    "connections": ["ingles"]
+  },
+  {
+    "id": "ingles",
+    "title": "✈️Inglés",
+    "page": "pages/english.html",
+    "x": 700,
+    "y": 100,
+    "connections": ["estadistica"]
+  },
+  {
+    "id": "estadistica",
+    "title": "📈Estadística",
+    "page": "pages/estadistica.html",
+    "x": 900,
+    "y": 250,
+    "connections": ["powerbi"]
+  },
+  {
+    "id": "powerbi",
+    "title": "📊Power BI",
+    "page": "pages/powerbi.html",
+    "x": 700,
+    "y": 250,
+    "connections": ["tableau"]
+  },
+  {
+    "id": "tableau",
+    "title": "📊Tableau",
+    "page": "pages/tableau.html",
+    "x": 500,
+    "y": 250,
+    "connections": ["python"]
+  },
+  {
+    "id": "python",
+    "title": "🐍Python",
+    "page": "pages/python.html",
+    "x": 300,
+    "y": 250,
+    "connections": ["cloud"]
+  },
+  {
+    "id": "cloud",
+    "title": "☁️AWS",
+    "page": "pages/aws.html",
+    "x": 100,
+    "y": 400,
+    "connections": ["ia"]
+  },
+  {
+    "id": "ia",
+    "title": "🤖IA",
+    "page": "pages/ia.html",
+    "x": 300,
+    "y": 400,
+    "connections": ["portafolio"]
+  },
+  {
+    "id": "portafolio",
+    "title": "📁CV",
+    "page": "pages/git.html",
+    "x": 500,
+    "y": 400,
+    "connections": ["analyst"]
+  },
+  {
+    "id": "analyst",
+    "title": "👩‍🎓Analyst",
+    "x": 700,
+    "y": 400,
+    "connections": []
+  }
+]

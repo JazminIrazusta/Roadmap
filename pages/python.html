@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Python · Roadmap Analista de Datos</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="brand">Roadmap · Analista de Datos</div>
+  <nav>
+    <a href="../index.html">Inicio</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section class="page-title">
+    <h1>Python</h1>
+    <p>Lenguaje de programación para análisis de datos.</p>
+  </section>
+
+  <section class="content">
+    <details>
+      <summary>Sintaxis Básica</summary>
+      <p>Variables, bucles, condicionales, funciones.</p>
+    </details>
+
+    <details>
+      <summary>Pandas</summary>
+      <p>Manipulación de datos con DataFrames.</p>
+    </details>
+
+    <details>
+      <summary>NumPy</summary>
+      <p>Arrays y operaciones matemáticas.</p>
+    </details>
+
+    <details>
+      <summary>Scikit-learn</summary>
+      <p>Machine learning básico.</p>
+    </details>
+  </section>
+
+  <section class="completion">
+    <label>
+      <input type="checkbox" id="complete-python" /> Marcar como completado
+    </label>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>Constancia &gt; motivación</p>
+</footer>
+
+<script src="../js/storage.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const checkbox = document.getElementById('complete-python');
+  const progress = getProgress();
+  if (progress['python'] === 'done') {
+    checkbox.checked = true;
+  }
+
+  checkbox.addEventListener('change', () => {
+    setProgress('python', checkbox.checked ? 'done' : 'todo');
+  });
+});
+</script>
+</body>
+</html>

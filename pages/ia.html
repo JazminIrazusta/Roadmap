@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IA y Copilot · Roadmap Analista de Datos</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="brand">Roadmap · Analista de Datos</div>
+  <nav>
+    <a href="../index.html">Inicio</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section class="page-title">
+    <h1>IA y Copilot</h1>
+    <p>Inteligencia Artificial y herramientas de asistencia para análisis de datos.</p>
+  </section>
+
+  <section class="content">
+    <details>
+      <summary>Conceptos Básicos de IA</summary>
+      <p>Machine Learning, Deep Learning, y sus aplicaciones en análisis de datos.</p>
+    </details>
+
+    <details>
+      <summary>Copilot y Asistentes IA</summary>
+      <p>Uso de herramientas como GitHub Copilot para acelerar el desarrollo y análisis.</p>
+    </details>
+
+    <details>
+      <summary>Automatización con IA</summary>
+      <p>Integrar IA en pipelines de datos para tareas repetitivas.</p>
+    </details>
+
+    <details>
+      <summary>Ética en IA</summary>
+      <p>Consideraciones éticas al usar IA en análisis de datos.</p>
+    </details>
+  </section>
+
+  <section class="completion">
+    <label>
+      <input type="checkbox" id="complete-ia" /> Marcar como completado
+    </label>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>Constancia &gt; motivación</p>
+</footer>
+
+<script src="../js/storage.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const checkbox = document.getElementById('complete-ia');
+  const progress = getProgress();
+  if (progress['ia'] === 'done') {
+    checkbox.checked = true;
+  }
+
+  checkbox.addEventListener('change', () => {
+    setProgress('ia', checkbox.checked ? 'done' : 'todo');
+  });
+});
+</script>
+</body>
+</html>

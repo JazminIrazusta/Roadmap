@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Excel · Roadmap Analista de Datos</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="brand">Roadmap · Analista de Datos</div>
+  <nav>
+    <a href="../index.html">Inicio</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section class="page-title">
+    <h1>Excel</h1>
+    <p>Herramientas esenciales para análisis de datos en Excel.</p>
+  </section>
+
+  <section class="content">
+    <details>
+      <summary>Fórmulas Básicas</summary>
+      <p>SUM, AVERAGE, COUNT, IF para cálculos condicionales.</p>
+    </details>
+
+    <details>
+      <summary>Tablas Dinámicas</summary>
+      <p>Crear resúmenes y análisis de datos grandes.</p>
+    </details>
+
+    <details>
+      <summary>Gráficos</summary>
+      <p>Visualizar datos con gráficos de barras, líneas, etc.</p>
+    </details>
+
+    <details>
+      <summary>Power Query</summary>
+      <p>Importar y transformar datos de múltiples fuentes.</p>
+    </details>
+  </section>
+
+  <section class="completion">
+    <label>
+      <input type="checkbox" id="complete-excel" /> Marcar como completado
+    </label>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>Constancia &gt; motivación</p>
+</footer>
+
+<script src="../js/storage.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const checkbox = document.getElementById('complete-excel');
+  const progress = getProgress();
+  if (progress['excel'] === 'done') {
+    checkbox.checked = true;
+  }
+
+  checkbox.addEventListener('change', () => {
+    setProgress('excel', checkbox.checked ? 'done' : 'todo');
+  });
+});
+</script>
+</body>
+</html>

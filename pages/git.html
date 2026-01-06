@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio · Roadmap Analista de Datos</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="brand">Roadmap · Analista de Datos</div>
+  <nav>
+    <a href="../index.html">Inicio</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section class="page-title">
+    <h1>Git / Portfolio</h1>
+    <p>Control de versiones y presentación de proyectos.</p>
+  </section>
+
+  <section class="content">
+    <details>
+      <summary>Comandos Básicos de Git</summary>
+      <p>init, add, commit, push, pull.</p>
+    </details>
+
+    <details>
+      <summary>GitHub</summary>
+      <p>Repositorios, pull requests, issues.</p>
+    </details>
+
+    <details>
+      <summary>Portfolio</summary>
+      <p>Crear un sitio web para mostrar proyectos.</p>
+    </details>
+
+    <details>
+      <summary>README y Documentación</summary>
+      <p>Escribir documentación clara para proyectos.</p>
+    </details>
+  </section>
+
+  <section class="completion">
+    <label>
+      <input type="checkbox" id="complete-portafolio" /> Marcar como completado
+    </label>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>Constancia &gt; motivación</p>
+</footer>
+
+<script src="../js/storage.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const checkbox = document.getElementById('complete-portafolio');
+  const progress = getProgress();
+  if (progress['portafolio'] === 'done') {
+    checkbox.checked = true;
+  }
+
+  checkbox.addEventListener('change', () => {
+    setProgress('portafolio', checkbox.checked ? 'done' : 'todo');
+  });
+});
+</script>
+</body>
+</html>

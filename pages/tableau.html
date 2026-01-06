@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tableau · Roadmap Analista de Datos</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="brand">Roadmap · Analista de Datos</div>
+  <nav>
+    <a href="../index.html">Inicio</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section class="page-title">
+    <h1>Tableau</h1>
+    <p>Plataforma de análisis y visualización de datos interactiva.</p>
+  </section>
+
+  <section class="content">
+    <details>
+      <summary>Conexión a Fuentes de Datos</summary>
+      <p>Excel, bases de datos, archivos CSV, APIs.</p>
+    </details>
+
+    <details>
+      <summary>Creación de Visualizaciones</summary>
+      <p>Gráficos de barras, líneas, scatter plots, mapas.</p>
+    </details>
+
+    <details>
+      <summary>Dashboards Interactivos</summary>
+      <p>Combinar visualizaciones, filtros, parámetros.</p>
+    </details>
+
+    <details>
+      <summary>Publicación y Compartir</summary>
+      <p>Tableau Server, Tableau Online, Tableau Public.</p>
+    </details>
+  </section>
+
+  <section class="completion">
+    <label>
+      <input type="checkbox" id="complete-tableau" /> Marcar como completado
+    </label>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>Constancia &gt; motivación</p>
+</footer>
+
+<script src="../js/storage.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const checkbox = document.getElementById('complete-tableau');
+  const progress = getProgress();
+  if (progress['tableau'] === 'done') {
+    checkbox.checked = true;
+  }
+
+  checkbox.addEventListener('change', () => {
+    setProgress('tableau', checkbox.checked ? 'done' : 'todo');
+  });
+});
+</script>
+</body>
+</html>

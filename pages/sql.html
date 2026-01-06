@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SQL · Roadmap Analista de Datos</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="brand">Roadmap · Analista de Datos</div>
+  <nav>
+    <a href="../index.html">Inicio</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section class="page-title">
+    <h1>SQL</h1>
+    <p>Conceptos clave para consultas de bases de datos.</p>
+  </section>
+
+  <section class="content">
+    <details>
+      <summary>Introducción a SQL</summary>
+      <p>SQL (Structured Query Language) es un lenguaje estándar para gestionar bases de datos relacionales. Permite consultar, insertar, actualizar y eliminar datos.</p>
+    </details>
+
+    <details>
+      <summary>Consultas SELECT</summary>
+      <p>La consulta básica: <code>SELECT columna FROM tabla WHERE condición;</code></p>
+    </details>
+
+    <details>
+      <summary>JOINs</summary>
+      <p>Unir tablas: INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN.</p>
+    </details>
+
+    <details>
+      <summary>Funciones Agregadas</summary>
+      <p>COUNT, SUM, AVG, MIN, MAX para análisis de datos.</p>
+    </details>
+  </section>
+
+  <section class="completion">
+    <label>
+      <input type="checkbox" id="complete-sql" /> Marcar como completado
+    </label>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>Constancia &gt; motivación</p>
+</footer>
+
+<script src="../js/storage.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const checkbox = document.getElementById('complete-sql');
+  const progress = getProgress();
+  if (progress['sql'] === 'done') {
+    checkbox.checked = true;
+  }
+
+  checkbox.addEventListener('change', () => {
+    setProgress('sql', checkbox.checked ? 'done' : 'todo');
+  });
+});
+</script>
+</body>
+</html>
