@@ -25,28 +25,34 @@
     <p>Vocabulario esencial para el análisis de datos.</p>
   </section>
 
-  <section class="content">
-    <details>
-      <summary>Términos de Bases de Datos</summary>
-      <p>Query, Table, Column, Row, Primary Key, Foreign Key.</p>
-    </details>
+    <section class="content">
+      <details>
+        <summary>Términos de Bases de Datos</summary>
+        <p>Query, Table, Column, Row, Primary Key, Foreign Key.</p>
+      </details>
 
-    <details>
-      <summary>Estadística</summary>
-      <p>Mean, Median, Mode, Standard Deviation, Correlation.</p>
-    </details>
+      <details>
+        <summary>Estadística</summary>
+        <p>Mean, Median, Mode, Standard Deviation, Correlation.</p>
+      </details>
 
-    <details>
-      <summary>Machine Learning</summary>
-      <p>Algorithm, Model, Training, Prediction, Accuracy.</p>
-    </details>
-  </section>
+      <details>
+        <summary>Machine Learning</summary>
+        <p>Algorithm, Model, Training, Prediction, Accuracy.</p>
+      </details>
 
-  <section class="completion">
-    <label>
-      <input type="checkbox" id="complete-ingles" /> Marcar como completado
-    </label>
-  </section>
+    <div class="annotation-form-container">
+      <h3>Agregar Anotación</h3>
+      <form id="annotation-form" class="annotation-form">
+        <input type="text" id="annotation-title" placeholder="Título de la anotación" required />
+        <textarea id="annotation-content" placeholder="Contenido de la anotación" required></textarea>
+        <button type="submit" class="btn">Agregar Anotación</button>
+      </form>
+    </div>
+
+    <div class="annotations-container">
+      <!-- Anotaciones dinámicas aquí -->
+    </div>
 
 </main>
 
@@ -55,17 +61,41 @@
 </footer>
 
 <script src="../js/storage.js"></script>
+<script src="../js/annotations.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const checkbox = document.getElementById('complete-ingles');
+  const nodeId = window.location.pathname.split('/').pop().split('.')[0]; // Extrae 'english' de la URL, pero en realidad es 'ingles'?
+
+  // Para english.html, pathname es english.html, pero id es 'ingles'
+  // Necesito mapear
+  const idMap = {
+    'english': 'ingles',
+    'estadistica': 'estadistica',
+    'excel': 'excel',
+    'git': 'git',
+    'ia': 'ia',
+    'powerbi': 'powerbi',
+    'python': 'python',
+    'sql': 'sql',
+    'tableau': 'tableau',
+    'aws': 'aws'
+  };
+  const nodeId = idMap[window.location.pathname.split('/').pop().split('.')[0]] || window.location.pathname.split('/').pop().split('.')[0];
+
+  // Inicializar progreso
+  const checkbox = document.getElementById('complete-' + nodeId);
   const progress = getProgress();
-  if (progress['ingles'] === 'done') {
+  if (progress[nodeId] === 'done') {
     checkbox.checked = true;
   }
 
   checkbox.addEventListener('change', () => {
-    setProgress('ingles', checkbox.checked ? 'done' : 'todo');
+    setProgress(nodeId, checkbox.checked ? 'done' : 'todo');
   });
+
+  // Inicializar anotaciones
+  renderAnnotations(nodeId);
+  initAnnotationForm(nodeId);
 });
 </script>
 </body>

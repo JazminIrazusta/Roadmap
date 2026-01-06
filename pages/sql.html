@@ -25,32 +25,22 @@
     <p>Conceptos clave para consultas de bases de datos.</p>
   </section>
 
-  <section class="content">
-    <details>
-      <summary>Introducción a SQL</summary>
-      <p>SQL (Structured Query Language) es un lenguaje estándar para gestionar bases de datos relacionales. Permite consultar, insertar, actualizar y eliminar datos.</p>
-    </details>
-
-    <details>
-      <summary>Consultas SELECT</summary>
-      <p>La consulta básica: <code>SELECT columna FROM tabla WHERE condición;</code></p>
-    </details>
-
-    <details>
-      <summary>JOINs</summary>
-      <p>Unir tablas: INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN.</p>
-    </details>
-
-    <details>
-      <summary>Funciones Agregadas</summary>
-      <p>COUNT, SUM, AVG, MIN, MAX para análisis de datos.</p>
-    </details>
-  </section>
-
-  <section class="completion">
-    <label>
-      <input type="checkbox" id="complete-sql" /> Marcar como completado
-    </label>
+  <section class="content-layout">
+    <div class="cards-section">
+      <div id="cardsContainer"></div>
+    </div>
+    <div class="form-section">
+      <form id="cardForm" class="card" style="cursor: default;">
+        <div class="card__top">
+          <span class="tag tag--sql">SQL</span>
+        </div>
+        <h2 class="card__title">Nueva tarjeta</h2>
+        <input type="text" id="title" placeholder="Título (ej: SELECT + WHERE)" required style="margin-bottom: .5rem;" />
+        <textarea id="description" placeholder="Descripción corta" required rows="2" style="margin-bottom: .5rem;" ></textarea>
+        <textarea id="content" placeholder="Contenido completo (definición, ejemplo, tips)" required rows="5" ></textarea>
+        <button class="btn btn--primary" style="margin-top: .75rem;"> Crear tarjeta </button>
+      </form>
+    </div>
   </section>
 
 </main>
@@ -60,16 +50,20 @@
 </footer>
 
 <script src="../js/storage.js"></script>
+<script src="../js/script-sql.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const checkbox = document.getElementById('complete-sql');
+  const nodeId = 'sql'; // ID del nodo
+
+  // Inicializar progreso
+  const checkbox = document.getElementById('complete-' + nodeId);
   const progress = getProgress();
-  if (progress['sql'] === 'done') {
+  if (progress[nodeId] === 'done') {
     checkbox.checked = true;
   }
 
   checkbox.addEventListener('change', () => {
-    setProgress('sql', checkbox.checked ? 'done' : 'todo');
+    setProgress(nodeId, checkbox.checked ? 'done' : 'todo');
   });
 });
 </script>

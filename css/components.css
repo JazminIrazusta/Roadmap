@@ -17,6 +17,10 @@
   opacity: .9;
 }
 
+.btn--primary {
+  background: var(--accent);
+}
+
 /* ===============================
    FORM ELEMENTS
 ================================ */
@@ -37,6 +41,32 @@ textarea::placeholder {
 }
 
 /* ===============================
+   ANNOTATION FORM
+================================ */
+.annotation-form-container {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.annotation-form-container h3 {
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.annotation-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.annotation-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* ===============================
    GENERIC CARD
 ================================ */
 .card {
@@ -44,6 +74,64 @@ textarea::placeholder {
   padding: 1rem 1.1rem;
   border-radius: 12px;
   border: 1px solid var(--border);
+}
+
+.card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.card__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card__text {
+  margin-bottom: 1rem;
+}
+
+.card__arrow {
+  font-size: 1.2rem;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.tag {
+  background: var(--accent);
+  color: var(--bg-main);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.tag--excel {
+  background: #217346;
+}
+
+.details {
+  margin-top: 1rem;
+}
+
+.summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.card__actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.btn--small {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
 }
 
 /* ===============================

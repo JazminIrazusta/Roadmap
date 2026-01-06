@@ -25,32 +25,22 @@
     <p>Herramientas esenciales para análisis de datos en Excel.</p>
   </section>
 
-  <section class="content">
-    <details>
-      <summary>Fórmulas Básicas</summary>
-      <p>SUM, AVERAGE, COUNT, IF para cálculos condicionales.</p>
-    </details>
-
-    <details>
-      <summary>Tablas Dinámicas</summary>
-      <p>Crear resúmenes y análisis de datos grandes.</p>
-    </details>
-
-    <details>
-      <summary>Gráficos</summary>
-      <p>Visualizar datos con gráficos de barras, líneas, etc.</p>
-    </details>
-
-    <details>
-      <summary>Power Query</summary>
-      <p>Importar y transformar datos de múltiples fuentes.</p>
-    </details>
-  </section>
-
-  <section class="completion">
-    <label>
-      <input type="checkbox" id="complete-excel" /> Marcar como completado
-    </label>
+  <section class="content-layout">
+    <div class="cards-section">
+      <div id="cardsContainer"></div>
+    </div>
+    <div class="form-section">
+      <form id="cardForm" class="card" style="cursor: default;">
+        <div class="card__top">
+          <span class="tag tag--excel">Excel</span>
+        </div>
+        <h2 class="card__title">Nueva tarjeta</h2>
+        <input type="text" id="title" placeholder="Título (ej: Tablas Dinámicas)" required style="margin-bottom: .5rem;" />
+        <textarea id="description" placeholder="Descripción corta" required rows="2" style="margin-bottom: .5rem;" ></textarea>
+        <textarea id="content" placeholder="Contenido completo (definición, ejemplo, tips)" required rows="5" ></textarea>
+        <button class="btn btn--primary" style="margin-top: .75rem;"> Crear tarjeta </button>
+      </form>
+    </div>
   </section>
 
 </main>
@@ -60,16 +50,20 @@
 </footer>
 
 <script src="../js/storage.js"></script>
+<script src="../js/script-excel.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const checkbox = document.getElementById('complete-excel');
+  const nodeId = 'excel'; // ID del nodo
+
+  // Inicializar progreso
+  const checkbox = document.getElementById('complete-' + nodeId);
   const progress = getProgress();
-  if (progress['excel'] === 'done') {
+  if (progress[nodeId] === 'done') {
     checkbox.checked = true;
   }
 
   checkbox.addEventListener('change', () => {
-    setProgress('excel', checkbox.checked ? 'done' : 'todo');
+    setProgress(nodeId, checkbox.checked ? 'done' : 'todo');
   });
 });
 </script>

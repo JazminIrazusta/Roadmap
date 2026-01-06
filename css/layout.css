@@ -50,6 +50,32 @@
 }
 
 /* ===============================
+   GRID
+================================ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+/* ===============================
+   CONTENT LAYOUT
+================================ */
+.content-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.cards-section {
+  flex: 7; /* 70% */
+}
+
+.form-section {
+  flex: 3; /* 30% */
+}
+
+/* ===============================
    FOOTER
 ================================ */
 .footer {
